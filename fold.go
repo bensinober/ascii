@@ -6,7 +6,7 @@ import (
 )
 
 // Fold the given string into ascii, with the exemption of the Norwegian characters 'æ', 'ø', 'å'
-// The implementation is literal translation of Lucene's AsciiFoldingFilter:
+// The implementation is a literal translation of Lucene's AsciiFoldingFilter:
 // https://github.com/apache/lucene-solr/blob/master/lucene/analysis/common/src/java/org/apache/lucene/analysis/miscellaneous/ASCIIFoldingFilter.java
 func Fold(s string) string {
 	var b bytes.Buffer
