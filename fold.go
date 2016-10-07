@@ -31,7 +31,17 @@ func fold(r rune) string {
 	case 'Ꜳ':
 		return "AA"
 	case 'Æ', 'Ǣ', 'Ǽ', 'ᴁ':
-		return "Æ" // Was: "AE"
+		return "\x00C6" // Was: "AE"
+	case 'æ', 'ǣ', 'ǽ', 'ᴂ':
+		return "\x00E6" // Was: "ae"
+	case 'Ø':
+		return "\x00D8"
+	case 'ø':
+		return "\x00F8"
+	case 'Å':
+		return "\x00C5"
+	case 'å':
+		return "\x00E5"
 	case 'Ꜵ':
 		return "AO"
 	case 'Ꜷ':
@@ -44,8 +54,6 @@ func fold(r rune) string {
 		return "(a)"
 	case 'ꜳ':
 		return "aa"
-	case 'æ', 'ǣ', 'ǽ', 'ᴂ':
-		return "æ" // Was: "ae"
 	case 'ꜵ':
 		return "ao"
 	case 'ꜷ':
